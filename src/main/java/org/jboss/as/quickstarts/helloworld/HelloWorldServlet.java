@@ -18,6 +18,7 @@ package org.jboss.as.quickstarts.helloworld;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.InetAddress;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -57,7 +58,12 @@ public class HelloWorldServlet extends HttpServlet {
         writer.println(PAGE_HEADER);
         // writer.println("<h1>" + helloService.createHelloMessage("World") + "</h1>");
         String name = req.getParameter("name");
+        if ( (name == null) || name.equals("") )
+        	name = "World";
         writer.println("<h1>" + helloService.createHelloMessage(name) + "</h1>");
+        writer.println("<h2>OS Name: " + System.getProperty("os.name") + "; OS Version: " + 
+        		System.getProperty("os.version") + "</h2>");
+        writer.println("<h2>Node name:" + InetAddress.getLocalHost().getHostName() + "</h2>");
         writer.println(PAGE_FOOTER);
         writer.close();
     }

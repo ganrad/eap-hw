@@ -59,9 +59,10 @@ public class HelloWorldServlet extends HttpServlet {
         writer.println("<h1>" + helloService.createHelloMessage("World") + "</h1>");
         /* String name = req.getParameter("name");
         if ( (name == null) || name.equals("") )
-        	name = req.getParameter("name");
-        if ( (name == null) || name.equals("") )
         	name = "World";
+	else
+        	name = req.getParameter("name");
+		
         writer.println("<h1>" + helloService.createHelloMessage(name) + "</h1>"); */
         writer.println("<h2>OS Name: " + System.getProperty("os.name") + "</h2>");
         writer.println("<h2>OS Version: " + System.getProperty("os.version") + "</h2>");

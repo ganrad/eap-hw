@@ -67,7 +67,7 @@ public class HelloWorldServlet extends HttpServlet {
         writer.println("<h2>OS Name: " + System.getProperty("os.name") + "</h2>");
         writer.println("<h2>OS Version: " + System.getProperty("os.version") + "</h2>");
         writer.println("<h2>Node/Server name: " + InetAddress.getLocalHost().getHostName() + "</h2>");
-        writer.println("<h2>Node/Server IP: " + InetAddress.getLocalHost().getHostAddress() + "</h2>"); */
+        writer.println("<h2>Node/Server IP: " + InetAddress.getLocalHost().getHostAddress() + "</h2>");
         writer.println(PAGE_FOOTER);
         writer.close();
     }
